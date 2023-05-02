@@ -1,0 +1,21 @@
+.footer-section{
+   display: flex;
+   justify-content: space-between; 
+   background-color: rgb(243, 167, 25);
+   margin-top: 200px;
+}
+.footer-section div h2{
+    font-family: cursive;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    color: black;
+    margin-right: 100px;
+    margin-top: 100px;
+}
+.footer-conatainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 40px 70px;
+}

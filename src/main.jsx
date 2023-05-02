@@ -8,6 +8,7 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './Layout/Root';
 import ErrorPage from './ErrorPage/ErrorPage';
+import Home from './components/HomePages/Home/Home';
 
 
 const router = createBrowserRouter([
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Main content is here bro</div>,
+        element: <Home></Home>,
       },
     ],
   },
