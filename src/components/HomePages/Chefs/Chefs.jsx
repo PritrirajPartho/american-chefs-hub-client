@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChefShow from "../ChefShow/ChefShow";
+import './Chefs.css';
 
 const Chefs = () => {
   const[chefs, setChefs] = useState([])
@@ -11,7 +12,7 @@ const Chefs = () => {
 
 
   return (
-    <div>
+    <div className="chefs-contaniner">
             {
               chefs.map(chef => <ChefShow
                 key={chef.id}
