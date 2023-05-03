@@ -9,20 +9,18 @@ const ChefShow = ({ chef }) => {
         <div>
             <img src={img} alt="" />
         </div>
-        <div>
+        <div className="chef-text">
             <h2>{name}</h2>
-            <h4>{experience}</h4>
-            <h4>{recipes.length}</h4>
+            <h4>Experience:   {experience}</h4>
+            <h4>Recipes:   {recipes.length}</h4>
         </div>
-        <div>
+        <div className="icon-part">
             <p>
-            <Icon icon="mdi:thumb-up" />
-            {likes}
+                <Icon icon="mdi:thumb-up" />
+                  {likes}
             </p>
             <p>
-                <button>
-                    <Icon icon="streamline:interface-edit-view-eye-eyeball-open-view" />
-                </button>
+                <Icon className="eye-btn"    icon="streamline:interface-edit-view-eye-eyeball-open-view" />
                 recipes
             </p>
         </div>

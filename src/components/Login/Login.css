@@ -1,0 +1,22 @@
+.auth-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.form{
+    border: 2px solid seagreen;
+    border-radius: 10px;
+    padding: 30px;
+}
+.input-field{
+    width: 330px;
+}
+
+.other-log-in{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.other-log-in button{
+    margin-right: 30px;
+}
