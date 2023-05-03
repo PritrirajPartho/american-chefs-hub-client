@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.confg";
 
 
@@ -8,11 +8,10 @@ import app from "../firebase/firebase.confg";
  const auth = getAuth(app);
 
 const AuthProvider = ({children}) => { 
-    
+    const provider = new GoogleAuthProvider();
     const[user, setUser] = useState(null);
     const[loading, setLoading] = useState(true);
-
-    const partho = 'kamo jay beta';
+/*------------------------------------------------------------------------- */
     const createUser = (email, password) =>{
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -25,16 +24,26 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-    useEffect(() =>{
-        const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log('auth state changed', currentUser);
-            setUser(currentUser);
-            setLoading(false);
-        })
-        return () =>{
-            unsubscribe();
-        }
-    } ,[user])
+    const updateUserProfile = profile => {
+        return updateProfile(auth.currentUser, profile)
+    }
+
+    // const handleGogleSignIn = () =>{
+    //    return signInWithPopup(auth, provider)
+    //  }
+
+
+/*--------------------------------------------------------------- */
+    // useEffect(() =>{
+    //     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
+    //         console.log('auth state changed', currentUser);
+    //         setUser(currentUser);
+    //         setLoading(false);
+    //     })
+    //     return () =>{
+    //         unsubscribe();
+    //     }
+    // } ,[user])
 
     const authInfo = {
         user,
@@ -42,9 +51,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         logOut,
-        partho
+        updateUserProfile
     }
-
+/*------------------------------------------------------------------*/
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

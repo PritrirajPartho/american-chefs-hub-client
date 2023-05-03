@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Registration = () => {
-    const{user, createUser} = useContext(AuthContext);
+    const{user, createUser, updateUserProfile} = useContext(AuthContext);
     console.log(user, createUser);
 
     const handleRegister = event =>{
@@ -20,6 +20,7 @@ const Registration = () => {
         .then(result =>{
             const logedUser = result.user;
             console.log(logedUser)
+            updateUserProfile({displayName:name, photoURL:photo})
             form.reset();
         })
         .catch(err =>{

@@ -2,9 +2,13 @@ import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import './Login.css';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.confg";
 
 const Login = () => {
     const{ signIn} = useContext(AuthContext);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth(app);
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -22,6 +26,19 @@ const Login = () => {
             console.log(err.message);
         })
     }
+    
+    // signin with google
+    const handleGogleSignIn = () =>{
+        signInWithPopup(auth, provider)
+        .then((result)=>{
+           const logedinuser = result.user;
+           console.log(logedinuser);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        })
+     }
+ 
   return (
    <section>
         <div className="auth-form">
@@ -39,7 +56,7 @@ const Login = () => {
       </Form>
      </div>
          <div className='other-log-in'>
-           <button>Sign with Gogle</button>
+           <button onClick={handleGogleSignIn}>Sign with Google</button>
            <button>Github sign-in</button>
         </div>
    </section>
