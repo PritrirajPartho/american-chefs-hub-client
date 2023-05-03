@@ -1,18 +1,18 @@
 import React from "react";
 import './Banner.css';
-import imgbanner from '../../../assets/images/single-2.jpeg';
+import imgbanner from '../../../assets/images/single.webp';
 
 const Banner = () => {
   return (
     <div className="banner-contaniner">
-        <div>
-            <h1><span className="text-info">Cook Smarter With</span><br/><span className="text-warning">American-Chefs-Hub</span></h1>
+        <div className="banner-text">
+            <h1><span className="text-info mb-5">Cook Smarter With</span><br/><span className="text-warning mt-5">American-Chefs-Hub</span></h1>
             <p>
-                A chef is a highly trained and skilled professional cook who is <br/>
-                proficient in all aspects of food preparation of a particular cuisine
+                Highly trained and skilled professional chefs who's is <br/>
+                proficient in all aspects of food preparation of a particular cuisine.
             </p>       
         </div>
-        <div>
+        <div className="banner-img-container">
             <img src={imgbanner} alt="" />
         </div>
     </div>
