@@ -28,22 +28,17 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser, profile)
     }
 
-    // const handleGogleSignIn = () =>{
-    //    return signInWithPopup(auth, provider)
-    //  }
-
-
 /*--------------------------------------------------------------- */
-    // useEffect(() =>{
-    //     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-    //         console.log('auth state changed', currentUser);
-    //         setUser(currentUser);
-    //         setLoading(false);
-    //     })
-    //     return () =>{
-    //         unsubscribe();
-    //     }
-    // } ,[user])
+    useEffect(() =>{
+        const unsubscribe = onAuthStateChanged(auth, currentUser =>{
+            console.log('auth state changed', currentUser);
+            setUser(currentUser);
+            setLoading(false);
+        })
+        return () =>{
+            unsubscribe();
+        }
+    } ,[user])
 
     const authInfo = {
         user,

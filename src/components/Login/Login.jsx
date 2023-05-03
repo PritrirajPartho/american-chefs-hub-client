@@ -2,14 +2,16 @@ import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import './Login.css';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendEmailVerification, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.confg";
 
 const Login = () => {
     const{ signIn} = useContext(AuthContext);
-    const provider = new GoogleAuthProvider();
+    const GoogleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     const auth = getAuth(app);
 
+// --------------------------------------------------------
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -17,28 +19,45 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         signIn(email, password)
-        .then(resalt =>{
-            const logedUser = resalt.user;
+        .then(result =>{
+            const logedUser = result.user;
             console.log(logedUser);
             form.reset();
+            // Email verification sent!
+            sendEmailVerification(result.user)
+            .then(verify => {
+            });
         })
         .catch(err =>{
             console.log(err.message);
         })
     }
     
-    // signin with google
+    // signin with google------------------------------------------
     const handleGogleSignIn = () =>{
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, GoogleProvider)
         .then((result)=>{
-           const logedinuser = result.user;
-           console.log(logedinuser);
+           const logedInUser = result.user;
+           console.log(logedInUser);
         })
         .catch((error) => {
           console.log(error.message);
         })
      }
- 
+
+    //  signin with github...........
+     const signInWithGithub = () =>{
+        signInWithPopup(auth, githubProvider)
+        .then((result)=>{
+            const logedInUser = result.user;
+            console.log(logedInUser);
+         })
+         .catch((error) => {
+           console.log(error.message);
+         })
+     }
+    
+
   return (
    <section>
         <div className="auth-form">
@@ -57,7 +76,7 @@ const Login = () => {
      </div>
          <div className='other-log-in'>
            <button onClick={handleGogleSignIn}>Sign with Google</button>
-           <button>Github sign-in</button>
+           <button onClick={signInWithGithub}>Github sign-in</button>
         </div>
    </section>
   );
