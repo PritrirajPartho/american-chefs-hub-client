@@ -13,6 +13,8 @@ import Blog from './components/Blog/Blog';
 import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
+import ChefDetails from './components/ChefDetails/ChefDetails';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -36,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/chefs/:id",
+        element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
+        loader: ({params}) => fetch(`https://chef-recipe-assignment-server-pritrirajpartho.vercel.app/chefs/${params.id}`)
       },
     ],
   },

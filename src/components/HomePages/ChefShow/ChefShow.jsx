@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import './ChefShow.css';
+import { Link } from "react-router-dom";
 
 const ChefShow = ({ chef }) => {
   const { id, name, img, experience, likes, recipes, view } = chef;
@@ -20,7 +21,7 @@ const ChefShow = ({ chef }) => {
                   {likes}
             </p>
             <p>
-                <Icon className="eye-btn"    icon="streamline:interface-edit-view-eye-eyeball-open-view" />
+                <Link to={`/chefs/${id}`}><Icon className="eye-btn"    icon="streamline:interface-edit-view-eye-eyeball-open-view" /></Link>
                 recipes
             </p>
         </div>

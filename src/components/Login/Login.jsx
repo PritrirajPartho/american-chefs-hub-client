@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendEmailVerification, signInWithPopup } from "firebase/auth";
@@ -10,6 +11,10 @@ const Login = () => {
     const GoogleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const auth = getAuth(app);
+// -------------------------------------------------------
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname  || '/'
 
 // --------------------------------------------------------
     const handleLogin = event =>{
@@ -27,6 +32,7 @@ const Login = () => {
             sendEmailVerification(result.user)
             .then(verify => {
             });
+            navigate(from, {replace: true})
         })
         .catch(err =>{
             console.log(err.message);
