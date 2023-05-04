@@ -1,54 +1,20 @@
+
 import React from 'react';
-import './Traffic.css';
-import { Carousel } from 'react-bootstrap';
-import slide1 from '../../../assets/images/bgc-two.jpeg'
-import slide2 from '../../../assets/images/bgc-one.jpeg'
-import slide3 from '../../../assets/images/single-2.jpeg'
 
 const Traffic = () => {
     return (
-      <section>
-        <h1 className='text-center text-info mt-5 mb-4'>Take your Food to here!!</h1>
-        <Carousel>
-            <Carousel.Item >
-            <img
-                className="d-block w-100 h-50"
-                src={slide1}
-                alt="First slide"
-            />
-            <Carousel.Caption>
-                <h3>First Recipe</h3>
-                <p>healthy food is inventor of healthy life.</p>
-            </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-            <img
-                className="d-block w-100 h-100 "
-                src={slide2}
-                alt="Second slide"
-            />
-    
-            <Carousel.Caption>
-                <h3>Second Recipes</h3>
-                <p>healthy food is inventor of healthy life.</p>
-            </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-            <img
-                className="d-block w-100 h-50"
-                src={slide3}
-                alt="Third slide"
-            />
-    
-            <Carousel.Caption>
-                <h3>Third Recipes</h3>
-                <p>
-                healthy food is inventor of healthy life.
-                </p>
-            </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
-      </section>
+        <div className='mt-5'>
+            <h1 className='text-center text-info mb-4 mt-5'>Our Success.....</h1> 
+           <div className='d-flex justify-content-center'>
+              <button className='bg-info px-3 py-2 fs-5 text-light border-0 me-4 rounded'>Subscribe</button>
+              <input className='py-2 px-5 rounded' type="email" name="email" id="email" placeholder='enter your email' required />
+           </div>
+            <div className='d-flex justify-content-center mt-4'>
+                <h1 className='me-5 ms-2'>Total Users: 20000+</h1>
+                <h1 className='me-5 '>Total Subscriber: 1000+</h1>
+                <h1>Total Visitors: 200000+</h1>
+            </div>
+        </div>
     );
 };
 
