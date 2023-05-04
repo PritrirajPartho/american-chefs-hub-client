@@ -18,5 +18,14 @@
     margin-top: 30px;
 }
 .other-log-in button{
-    margin-right: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.icon-img{
+    width: 80px;
+    height: 60px;
+    background: none;
+    margin-left: 0;
+    margin-right: 15px;
 }

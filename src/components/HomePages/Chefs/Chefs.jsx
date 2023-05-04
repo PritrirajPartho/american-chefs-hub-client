@@ -12,14 +12,17 @@ const Chefs = () => {
 
 
   return (
-    <div className="chefs-contaniner">
-            {
-              chefs.map(chef => <ChefShow
-                key={chef.id}
-                chef={chef}
-              ></ChefShow>)
-            }
-    </div>
+    <section>
+          <h1 className="text-center mt-5 text-warning">See all Pro Chefs......</h1>
+          <div className="chefs-contaniner">
+             {
+                chefs.map(chef => <ChefShow
+                  key={chef.id}
+                  chef={chef}
+                ></ChefShow>)
+             }
+          </div>
+    </section>
   );
 };
 

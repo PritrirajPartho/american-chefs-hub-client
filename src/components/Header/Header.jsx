@@ -3,21 +3,33 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Profile from "./Profile/Profile";
 
 const Header = () => {
-  const{logOut} = useContext(AuthContext);
+  const{logOut, user} = useContext(AuthContext);
   return (
     <Navbar bg="warning" expand="lg">
       <Container>
         <Navbar.Brand className="fs-1 ms-1">American-Chefs-Hub</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="" id="anchor-contaniner">
+          <Nav className="anchor-contaniner" >
+                <div className="link-part">
                 <Link to={"/"}>Home</Link>
                 <Link to={"/blog"}>Blog</Link>
                 <Link to={'/registration'}>Registration</Link>
-                <Link to={'/login'}>Login</Link>
-                 <h1 onClick={logOut}>Logout</h1>
+                </div>
+                {/* <Link to={'/login'}>Login</Link> */}
+                {
+                    user ? <>
+                           <div className="profile-component"><Profile ></Profile></div>
+                           <button onClick={logOut}   className="ms-5 signout bg-info rounded text-light">Signout</button>
+                           </>
+                     :
+                        <div >
+                          <Link to={'/login'}>Log in</Link>
+                        </div>
+                }
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -2,7 +2,7 @@
    display: flex;
    justify-content: space-between; 
    background-color: rgb(243, 167, 25);
-   margin-top: 200px;
+   margin-top: 100px;
 }
 .footer-section div h2{
     font-family: cursive;
@@ -10,12 +10,17 @@
     font-weight: 600;
     font-size: 32px;
     color: black;
-    margin-right: 100px;
-    margin-top: 100px;
+    margin-right: 400px;
+    margin-top: 120px;
 }
 .footer-conatainer{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     padding: 40px 70px;
+}
+.footer-conatainer a{
+    margin-bottom:  20px;
+    text-decoration: none;
+    font-size: 24px;
 }

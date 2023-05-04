@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendEmailVerification, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.confg";
+import gogleIcon from '../../../public/google-icon.png';
+import githubIcon from '../../../public/github-icon.jpeg';
+
 
 const Login = () => {
     const{ signIn} = useContext(AuthContext);
     const GoogleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const auth = getAuth(app);
+    const[error, setError] = useState('');
 // -------------------------------------------------------
     const navigate = useNavigate();
     const location = useLocation();
@@ -19,6 +23,7 @@ const Login = () => {
 // --------------------------------------------------------
     const handleLogin = event =>{
         event.preventDefault();
+        setError('');
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -29,13 +34,14 @@ const Login = () => {
             console.log(logedUser);
             form.reset();
             // Email verification sent!
-            sendEmailVerification(result.user)
-            .then(verify => {
-            });
+            // sendEmailVerification(result.user)
+            // .then(verify => {
+            // });
             navigate(from, {replace: true})
         })
         .catch(err =>{
-            console.log(err.message);
+            setError('wrong password or invalid email...');
+            console.log(err.message)
         })
     }
     
@@ -77,12 +83,19 @@ const Login = () => {
              <Form.Label>Password</Form.Label>
              <Form.Control type="password" placeholder="Password" name="password" />
          </Form.Group>
-         <input type="submit" value="Submit" />
+         <p className="text-danger">{error}</p>
+         <input className="bg-success text-light px-2 py-1 fs-5 rounded border-0 mt-3" type="submit" value="Submit" />
       </Form>
      </div>
          <div className='other-log-in'>
-           <button onClick={handleGogleSignIn}>Sign with Google</button>
-           <button onClick={signInWithGithub}>Github sign-in</button>
+           <button onClick={handleGogleSignIn} className="ps-0 pe-2 fs-5 fw-bold rounded">
+               <img className="icon-img " src={gogleIcon} alt="" />
+               Google-Sign-in
+            </button>
+           <button onClick={signInWithGithub}  className="ps-0 pe-2 fs-5 fw-bold rounded">
+               <img className="icon-img " src={githubIcon} alt="" />
+                Github-Sign-in
+            </button>
         </div>
    </section>
   );

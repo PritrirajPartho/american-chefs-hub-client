@@ -1,12 +1,26 @@
-#anchor-contaniner{
+.anchor-contaniner{
     display: flex;
     justify-content: space-between;
-    margin-left: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
-a{
-  margin-top: -1px;
-  margin-bottom: 15px;
-  text-decoration: none;
-  margin-left: 30px;
-  font-size: 24px;
+.link-part a{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-top: 35px;
+}
+
+.signout{
+  /* width: 100px;
+  height: 45px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 50px;
+  border: none; */
+}
+.profile-component{
+  height: 50px;
+  widows: 100px;
 }
