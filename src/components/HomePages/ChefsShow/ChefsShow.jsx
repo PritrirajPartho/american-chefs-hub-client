@@ -1,12 +1,12 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import './ChefShow.css';
+import './ChefsShow.css';
 import { Link } from "react-router-dom";
 
-const ChefShow = ({ chef }) => {
-  const { id, name, img, experience, likes, recipes, view } = chef;
-  return (
-    <div className="chef">
+const ChefsShow = ({chef}) => {
+    const { id, name, img, experience, likes, recipes} = chef;
+    return (
+        <div className="chef">
         <div>
             <img src={img} alt="" />
         </div>
@@ -26,6 +26,7 @@ const ChefShow = ({ chef }) => {
             </p>
         </div>
     </div>
-  );
+    );
 };
-export default ChefShow;
+
+export default ChefsShow;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ChefShow from "../ChefShow/ChefShow";
 import './Chefs.css';
+import ChefsShow from "../ChefsShow/ChefsShow";
 
 const Chefs = () => {
   const[chefs, setChefs] = useState([])
@@ -12,14 +12,15 @@ const Chefs = () => {
 
 
   return (
-    <section>
+    <section className="mb-5">
           <h1 className="text-center mt-5 text-warning">See all Pro Chefs......</h1>
           <div className="chefs-contaniner">
              {
-                chefs.map(chef => <ChefShow
-                  key={chef.id}
-                  chef={chef}
-                ></ChefShow>)
+                chefs.map(chef => <ChefsShow
+                      key={chef.id}
+                      chef={chef}
+                >
+                </ChefsShow>)
              }
           </div>
     </section>

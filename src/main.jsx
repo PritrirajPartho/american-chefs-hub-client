@@ -13,8 +13,8 @@ import Blog from './components/Blog/Blog';
 import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
-import ChefDetails from './components/ChefDetails/ChefDetails';
 import PrivateRoutes from './routes/PrivateRoutes';
+import ChefDetails from './components/ChefDetails/ChefDetails';
 
 
 const router = createBrowserRouter([

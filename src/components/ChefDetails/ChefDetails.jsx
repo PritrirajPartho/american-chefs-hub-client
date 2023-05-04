@@ -12,9 +12,9 @@ const ChefDetails = () => {
         </div>
         <div>
             <h1>Name: {name}</h1>
-            {recipes.map(r => <ul key={r.length}>
+            {/* {recipes.map(r => <ul key={r.length}>
                 <li>{r}</li>
-            </ul>)}
+            </ul>)} */}
             <p>Bio: {bio}</p>
         </div>
         <div>
