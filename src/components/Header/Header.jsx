@@ -19,14 +19,13 @@ const Header = () => {
                 <Link to={"/blog"}>Blog</Link>
                 <Link to={'/registration'}>Registration</Link>
                 </div>
-                {/* <Link to={'/login'}>Login</Link> */}
                 {
                     user ? <>
                            <div className="profile-component"><Profile ></Profile></div>
-                           <button onClick={logOut}   className="ms-5 signout bg-info rounded text-light">Signout</button>
+                           <button onClick={logOut}   className=" signout bg-info rounded text-light">Signout</button>
                            </>
                      :
-                        <div >
+                        <div className="log-link" >
                           <Link to={'/login'}>Log in</Link>
                         </div>
                 }

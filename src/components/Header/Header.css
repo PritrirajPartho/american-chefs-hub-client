@@ -4,23 +4,23 @@
     padding-bottom: 0px;
     padding-top: 0px;
 }
-.link-part a{
+.link-part {
   display: flex;
-  flex-direction: row;
-  margin-left: 40px;
-  margin-top: 35px;
 }
 
-.signout{
-  /* width: 100px;
-  height: 45px;
-  margin-top: 30px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 50px;
-  border: none; */
+.link-part a{
+  margin-left: 30px;
+  font-size: 24px;
+  text-decoration: none;
+}
+.log-link a{
+   text-decoration: none;
+   font-size: 24px;
+   margin-left: 30px;
+   margin-top: 30px;
 }
 .profile-component{
   height: 50px;
   widows: 100px;
+  margin-left: 40px;
 }
