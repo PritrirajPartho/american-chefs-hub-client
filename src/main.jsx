@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
+import 'react-tooltip/dist/react-tooltip.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './Layout/Root';
 import ErrorPage from './ErrorPage/ErrorPage';

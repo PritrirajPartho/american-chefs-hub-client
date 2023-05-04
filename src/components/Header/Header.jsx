@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Profile from "./Profile/Profile";
+import { Tooltip } from 'react-tooltip'
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -28,8 +29,9 @@ const Header = () => {
             </div>
             {user ? (
               <>
-                <div className="profile-component">
+                <div className="profile-component" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
                   <Profile></Profile>
+                  <Tooltip id="my-tooltip"/>
                 </div>
                 <button
                   onClick={logOut}

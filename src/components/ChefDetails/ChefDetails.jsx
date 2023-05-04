@@ -2,6 +2,8 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import './ChefDetails.css';
 import Recipes from "../Recipes/Recipes";
+import LazyLoad from 'react-lazy-load';
+import { Spinner } from "react-bootstrap";
 
 const ChefDetails = () => {
   const chef = useLoaderData();
@@ -11,6 +13,9 @@ const ChefDetails = () => {
     <section>
       <div className="chef-details-container">
             <div>
+                 <LazyLoad height={50}>
+                     <Spinner animation="border" variant="danger" />
+                  </LazyLoad>
                 <img src={img} alt="" />
             </div>
             <div className="mt-4">
