@@ -5,5 +5,11 @@
     border-radius: 10px;
 }
 .btn-favourite svg{
-    font-size: 50px;
+    font-size: 40px;
+}
+.btn-favourite{
+    background: none;
+    border: none;
+    margin-bottom: 20px;
+    color: red;
 }

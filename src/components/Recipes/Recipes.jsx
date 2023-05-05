@@ -25,11 +25,10 @@ const Recipes = ({recipe}) => {
                     <li>{ingredients[4]}</li>
               </ul>
              <div>
-                <p>method:{method.slice(0, 40)}....</p>
+                <p className='me-5'><strong className="me-2">Method:</strong>{method.slice(0, 40)}....</p>
                 <div className='d-flex'>
-                    <span>rating:   {rating}</span>
-                    <button  onClick={notify}  disabled={isDisabled} className='ms-5 w-50 h-50 btn-favourite'><Icon    icon="icon-park-solid:love-and-help" /> <ToastContainer/></button>
-                    
+                    <span className='mt-2'><strong className="me-2">Rating:</strong>{rating}</span>
+                    <button  onClick={notify}  disabled={isDisabled} className='ms-5 w-50 h-50 btn-favourite'><Icon    icon="icon-park-solid:love-and-help" /> <ToastContainer/></button>   
                 </div>
              </div>
         </div>

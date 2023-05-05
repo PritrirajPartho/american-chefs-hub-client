@@ -19,15 +19,15 @@ const ChefDetails = () => {
                 <img src={img} alt="" />
             </div>
             <div className="mt-4">
-                <h1>Name: {name}</h1>
-                <p>Bio:  {bio}</p>
+                <h1><strong className="me-2">Name:</strong>{name}</h1>
+                <p><strong className="me-2">Bio:</strong>{bio}</p>
             </div>
             <div  className="mt-4">
-            <p>Experience:  {experience}</p>
+            <p><strong className="me-2">Experience:</strong>{experience}</p>
             <p>
-                <span>Recipes Quantity:  {recipes.length}</span>
+                <span><strong className="me-2">Recipes-Quantity:</strong>{recipes.length}</span>
             </p>
-            <p>People likes:  {likes}</p>
+            <p><strong className="me-2">People likes:</strong>{likes}</p>
             </div>
       </div>
       <div className="recipe-container">

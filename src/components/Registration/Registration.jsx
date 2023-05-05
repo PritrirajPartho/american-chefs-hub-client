@@ -62,7 +62,7 @@ const Registration = () => {
                     <Form.Control type="password" placeholder="Password" name="password" />
                 </Form.Group>
                  <p className='text-danger'>{error}</p>
-                 <input  className='bg-success text-light px-2 py-1 fs-5 rounded border-0 mt-3'  type="submit" value="Submit" />
+                 <input  className='bg-info text-light px-2 py-1 fs-5 rounded border-0 mt-3'  type="submit" value="Submit" />
             </Form>
      </div>
      </section>
