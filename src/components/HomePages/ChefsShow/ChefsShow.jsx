@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ChefsShow = ({chef}) => {
     const { id, name, img, experience, likes, recipes} = chef;
     return (
-        <div className="chef">
+        <div className="chef bg-info">
         <div>
             <img src={img} alt="" />
         </div>
@@ -17,12 +17,11 @@ const ChefsShow = ({chef}) => {
         </div>
         <div className="icon-part">
             <p>
-                <Icon icon="mdi:thumb-up" />
-                  {likes}
+                <Icon className="fs-1" icon="mdi:thumb-up" />
+                 <span className="likes">{likes}</span>
             </p>
             <p>
-                <Link to={`/chefs/${id}`}><Icon className="eye-btn"    icon="streamline:interface-edit-view-eye-eyeball-open-view" /></Link>
-                recipes
+                <Link to={`/chefs/${id}`}><button className="ms-4 bg-warning text-dark fw-bold border-0 mt-1 px-2 py-1 rounded">View-Recipes</button></Link>
             </p>
         </div>
     </div>

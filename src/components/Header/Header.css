@@ -9,11 +9,13 @@
 }
 
 .link-part a{
+  color: azure;
   margin-left: 30px;
   font-size: 24px;
   text-decoration: none;
 }
 .log-link a{
+   color: azure;
    text-decoration: none;
    font-size: 24px;
    margin-left: 30px;
@@ -25,5 +27,5 @@
   margin-left: 40px;
 }
 .active{
-  border-bottom: 5px solid blueviolet;
+  border-bottom: 5px solid orange;
 }

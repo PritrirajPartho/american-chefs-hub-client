@@ -9,13 +9,13 @@ import { Tooltip } from 'react-tooltip'
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
   return (
-    <Navbar bg="warning" expand="lg">
+    <Navbar bg="info"  expand="lg">
       <Container>
         <Navbar.Brand className="fs-1 ms-1">American-Chefs-Hub</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="anchor-contaniner">
-            <div className="link-part">
+            <div className="link-part ">
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
@@ -35,7 +35,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={logOut}
-                  className=" signout bg-info rounded text-light"
+                  className=" signout bg-warning fs-5 fw-bold border-0 rounded text-light"
                 >
                   Signout
                 </button>

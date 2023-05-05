@@ -13,7 +13,7 @@ const ChefDetails = () => {
     <section>
       <div className="chef-details-container">
             <div>
-                 <LazyLoad height={50}>
+                 <LazyLoad height={20} className="text-center mt-4">
                      <Spinner animation="border" variant="danger" />
                   </LazyLoad>
                 <img src={img} alt="" />

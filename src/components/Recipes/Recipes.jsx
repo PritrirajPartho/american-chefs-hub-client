@@ -5,9 +5,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Recipes = ({recipe}) => {
-    const notify = () => toast("the recipe is added to your favorite!!");
     const{name,img, id, ingredients, method, rating} = recipe;
     const [isDisabled, setIsDisabled] = useState(false);
+    const notify = () => {
+        toast("the recipe is added to your favorite!!");
+        setIsDisabled(true)
+        console.log(isDisabled);
+    };
 
     return (
         <div className='recipes-card'>
@@ -24,7 +28,8 @@ const Recipes = ({recipe}) => {
                 <p>method:{method.slice(0, 40)}....</p>
                 <div className='d-flex'>
                     <span>rating:   {rating}</span>
-                    <p className='ms-5 w-50 h-50'  disabled={isDisabled}> <Icon  onClick={notify}    icon="icon-park-solid:love-and-help" /> <ToastContainer/></p>
+                    <button  onClick={notify}  disabled={isDisabled} className='ms-5 w-50 h-50 btn-favourite'><Icon    icon="icon-park-solid:love-and-help" /> <ToastContainer/></button>
+                    
                 </div>
              </div>
         </div>

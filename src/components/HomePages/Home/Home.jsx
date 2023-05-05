@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <LazyLoad height={100}>
+      <LazyLoad height={20} className="text-center mt-5">
          <Spinner animation="border" variant="danger" />
       </LazyLoad>
       <Chefs></Chefs>

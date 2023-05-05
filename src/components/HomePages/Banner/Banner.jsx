@@ -10,7 +10,8 @@ const Banner = () => {
             <p>
                 Highly trained and skilled professional chefs who's is <br/>
                 proficient in all aspects of food preparation of a particular cuisine.
-            </p>       
+            </p>   
+            <button className="bg-info text-light px-4 py-3 fw-bold  fs-4 border-0 rounded mt-2">Get Started</button>    
         </div>
         <div className="banner-img-container">
             <img src={imgbanner} alt="" />

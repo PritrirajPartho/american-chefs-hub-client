@@ -1,18 +1,9 @@
 .footer-section{
    display: flex;
-   justify-content: space-between; 
-   background-color: rgb(243, 167, 25);
+   justify-content: center; 
    margin-top: 100px;
 }
-.footer-section div h2{
-    font-family: cursive;
-    text-align: center;
-    font-weight: 600;
-    font-size: 32px;
-    color: black;
-    margin-right: 400px;
-    margin-top: 120px;
-}
+
 .footer-conatainer{
     display: flex;
     flex-direction: column;
@@ -20,7 +11,20 @@
     padding: 40px 70px;
 }
 .footer-conatainer a{
+    color: azure;
     margin-bottom:  20px;
     text-decoration: none;
     font-size: 24px;
+}
+.footer-second-part{
+   margin-left: 100px;
+}
+.footer-second-part  h2{
+    font-family: cursive;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    color: black;
+    margin-right: 400px;
+    margin-top: 65px;
 }
