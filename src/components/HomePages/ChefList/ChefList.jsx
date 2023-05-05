@@ -4,8 +4,8 @@ import { Table } from "react-bootstrap";
 const ChefList = () => {
   return (
     <section className="ms-5 me-5">
-       <h1 className="text-center text-warning mt-3 mb-4">Our Experienced Chefs Extra-Data</h1>
-      <Table striped bordered hover>
+       <h1 className="text-center text-warning mt-3 mb-4 " sm={3}>Our Experienced Chefs Extra-Data</h1>
+      <Table striped bordered hover responsive="sm md">
         <thead>
           <tr>
             <th >Serial no.</th>

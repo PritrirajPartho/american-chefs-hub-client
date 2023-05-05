@@ -19,3 +19,29 @@
     margin-left: 50px;
     border-radius: 15px;
 }
+
+/*mobile Responsive code is here */
+@media only screen and (max-width: 600px) {
+  .banner-contaniner{
+    display: flex;
+    flex-direction: column;
+  }
+  .banner-text{
+    margin-left: 40px;
+  }
+  .banner-text h1{
+      font-size: 30px;
+      margin-bottom: 30px;
+  }
+  .banner-text p{
+      font-size: larger;
+  }
+  .banner-img-container img{
+      width: 350px;
+      height: 300px;
+      margin-left: 30px;
+      margin-top: 30px;
+      border-radius: 15px;
+  }
+  
+}

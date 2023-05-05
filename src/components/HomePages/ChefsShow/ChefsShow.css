@@ -35,3 +35,17 @@
   margin-bottom: 0;
   margin-left: 10px;
 }  
+
+/*mobile Responsive code is here */
+@media only screen and (max-width: 600px) {
+  .chef{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid saddlebrown;
+    width: 350px;
+    border-radius: 10px ;
+    margin-bottom: 25px;
+    margin-right: 20px;
+}
+}
+

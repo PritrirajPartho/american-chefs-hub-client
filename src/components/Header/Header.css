@@ -23,9 +23,28 @@
 }
 .profile-component{
   height: 50px;
-  widows: 100px;
+  width: 100px;
   margin-left: 40px;
 }
 .active{
   border-bottom: 5px solid orange;
+}
+
+/*mobile Responsive code is here */
+@media only screen and (max-width: 600px) {
+  .link-part {
+    display: flex;
+    flex-direction: column;
+  }
+  .active{
+    max-width: 130px;
+    border-bottom: 5px solid orange;
+  }
+  .profile-component{
+    height: 50px;
+    width: 100px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

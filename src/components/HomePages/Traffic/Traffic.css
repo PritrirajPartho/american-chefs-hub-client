@@ -1,6 +1,34 @@
-/* .fourth-section{
-    height: 600px;
-    width: 700px;
-    background-image: url('../../../assets/images/bgc-two.jpeg');
-    background-repeat: no-repeat;
-} */
+.our-achive{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 15px;
+  } 
+  .suscribe{
+    display: flex;
+    justify-content: center;
+  }
+
+/*mobile Responsive code is here */
+@media only screen and (max-width: 600px) {
+    .our-achive{
+      display: flex;
+      flex-direction: column;
+      font-size: small;
+      margin-left: 50px;
+    }  
+    .suscribe{
+        display: flex;
+        flex-direction: column;
+      }
+      .suscribe button{
+         margin-bottom: 20px;
+         width: 200px;
+         margin-left: 50px;
+      }
+      .suscribe input{
+         width: 300px;
+         margin-left: 50px;
+      }
+  }
+  

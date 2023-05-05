@@ -12,7 +12,7 @@ const Chefs = () => {
 
 
   return (
-    <section className="mb-5">
+    <section className="mb-5 mt-5">
           <h1 className="text-center mt-5 text-warning">See all Our Pro Chefs</h1>
           <div className="chefs-contaniner">
              {
