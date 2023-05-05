@@ -1,5 +1,5 @@
 import React from 'react';
-import fourOf from '../assets/four-of-four.jpg';
+import fourOf from '../../assets/images/four-of-four.jpg';
 
 const ErrorPage = () => {
     return (

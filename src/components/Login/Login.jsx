@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Form } from "react-bootstrap";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendEmailVerification, signInWithPopup } from "firebase/auth";
@@ -85,6 +85,7 @@ const Login = () => {
          </Form.Group>
          <p className="text-danger">{error}</p>
          <input className="bg-info text-light px-2 py-1 fs-5 rounded border-0 mt-3" type="submit" value="Submit" />
+         <p className="mt-3 mb-1">If you hava no any account?<Link className="text-decoration-none ms-1" to={'/registration'}>Register</Link></p>
       </Form>
      </div>
          <div className='other-log-in'>

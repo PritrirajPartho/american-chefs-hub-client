@@ -8,7 +8,6 @@ import "./index.css";
 import 'react-tooltip/dist/react-tooltip.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './Layout/Root';
-import ErrorPage from './ErrorPage/ErrorPage';
 import Home from './components/HomePages/Home/Home';
 import Blog from './components/Blog/Blog';
 import Registration from './components/Registration/Registration';
@@ -16,13 +15,14 @@ import Login from './components/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoutes from './routes/PrivateRoutes';
 import ChefDetails from './components/ChefDetails/ChefDetails';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

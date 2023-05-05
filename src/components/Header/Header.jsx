@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Profile from "./Profile/Profile";
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from "react-tooltip";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
   return (
-    <Navbar bg="info"  expand="lg">
+    <Navbar bg="info" expand="lg">
       <Container>
         <Navbar.Brand className="fs-1 ms-1">American-Chefs-Hub</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,9 +29,13 @@ const Header = () => {
             </div>
             {user ? (
               <>
-                <div className="profile-component" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                <div
+                  className="profile-component"
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={user.displayName}
+                >
                   <Profile></Profile>
-                  <Tooltip id="my-tooltip"/>
+                  <Tooltip id="my-tooltip" />
                 </div>
                 <button
                   onClick={logOut}

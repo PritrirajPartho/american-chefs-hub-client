@@ -18,7 +18,7 @@ const Footer = () => {
                 <h5 className="mt-4">Phone: 0099868900</h5>
             </div>
          </div>
-        <h5 className="text-center mb-4 mt-0">All-right-reserved©American-Chefs-Hub..</h5>
+        <h5 className="text-center mb-4 mt-0">American-Chefs-Hub©All-right-reserved.</h5>
     </section>
   );
 };
